@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '2.2.4.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id 'java'
+    id "io.freefair.lombok" version "6.3.0"
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+group = 'com.cashrich'
+version = '0.0.1'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation('org.springframework:spring-orm:5.2.3.RELEASE')
+    implementation('javax.servlet:jstl:1.2')
+    implementation('mysql:mysql-connector-java:8.0.17')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //required only if jdk 9 or higher version is used
+    runtimeOnly('javax.xml.bind:jaxb-api:2.4.0-b180830.0359')
+}
