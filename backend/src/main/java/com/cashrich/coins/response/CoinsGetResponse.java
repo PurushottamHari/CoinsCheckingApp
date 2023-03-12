@@ -2,20 +2,22 @@ package com.cashrich.coins.response;
 
 import com.cashrich.coins.dto.CoinDto;
 
+import java.util.List;
+
 public class CoinsGetResponse {
     private CoinsGetResponseEnum coinsGetResponseEnum;
-    CoinDto coinDto;
+    List<CoinDto> coinDtoList;
 
-    public CoinsGetResponse(CoinsGetResponseEnum coinsGetResponseEnum, CoinDto coinDto) {
+    public CoinsGetResponse(CoinsGetResponseEnum coinsGetResponseEnum, List<CoinDto> coinDtoList) {
         this.coinsGetResponseEnum = coinsGetResponseEnum;
-        this.coinDto = coinDto;
+        this.coinDtoList = coinDtoList;
     }
 
     public CoinsGetResponseEnum getCoinsGetResponseEnum() {
         return coinsGetResponseEnum;
     }
 
-    public CoinDto getCoinDto() {
-        return coinDto;
+    public List<CoinDto> getCoinDtoList() {
+        return coinDtoList;
     }
 }

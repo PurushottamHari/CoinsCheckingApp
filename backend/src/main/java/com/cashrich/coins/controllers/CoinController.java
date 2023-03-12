@@ -38,8 +38,8 @@ public class CoinController {
 
     private ResponseEntity<Object> generateCoinsGetResponse(CoinsGetResponse coinsGetResponse){
         switch(coinsGetResponse.getCoinsGetResponseEnum()){
-            case COINS_FETCHED: return ResponseHandler.generateResponse("Successfully created new user!", HttpStatus.ACCEPTED, coinsGetResponse.getCoinDto());
-            case COINS_FETCH_FAILED: return ResponseHandler.generateResponse("User already exists!", HttpStatus.INTERNAL_SERVER_ERROR, null);
+            case COINS_FETCHED: return ResponseHandler.generateResponse("Successfully fetched coins!", HttpStatus.ACCEPTED, coinsGetResponse.getCoinDtoList());
+            case COINS_FETCH_FAILED: return ResponseHandler.generateResponse("Fetching coins failed!", HttpStatus.INTERNAL_SERVER_ERROR, null);
             case USER_AUTH_FAILED: return ResponseHandler.generateResponse("User Validation Failed!", HttpStatus.NOT_ACCEPTABLE, null);
             default:
                 throw new UserSignupResponseException();
