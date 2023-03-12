@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:frontend/models/user_dto.dart';
+import 'package:frontend/pages/show_coins/show_coins.dart';
 import 'package:frontend/utils/user/user_utils.dart';
 
 class Home extends StatelessWidget {
@@ -58,7 +59,10 @@ class Home extends StatelessWidget {
               return SizedBox(
                   height: screenHeight*0.07,
                   width: screenWidth*0.15,
-                  child: CircularProgressIndicator()
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).colorScheme.primary),
+                    backgroundColor: Colors.black,
+                  ),
               );
           }
         }
@@ -92,7 +96,7 @@ class Home extends StatelessWidget {
 
     return MaterialButton(
         onPressed: (){
-
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ShowCoin()));
         },
         child: const Text("Check Coins"),
         color: Colors.yellow,
