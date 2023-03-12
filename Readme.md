@@ -1,8 +1,11 @@
-Run mysql db using docker
-docker run -p 6603:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=test" mysql
+Backend:
+1) Run the sql docker command on the same instance as the backend
+   Run mysql db using docker 
+      docker run -p 6603:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=test" mysql
 
-For now since I could not deploy the backend, I kept the flutter app and server on the same network and used the common ip 
-Configure the IP in this file: /frontend/lib/utils/rest_api/endpoints.dart (RestUrl variable)
+Frontend:
+   For now since I could not deploy the backend, I kept the flutter app and server on the same network and used the common ip 
+   Configure the IP in this file: /frontend/lib/utils/rest_api/endpoints.dart (RestUrl variable)
 
 Screenshots of the app are in screenshots folder.
 
