@@ -4,6 +4,7 @@ class Endpoints{
   static const String LOGIN_URL = "/user/login";
   static const String SIGN_UP_URL = "/user/sign-up";
   static const String GET_USER_URL = "/user";
+  static const String GET_COINS_URL = "/coin";
 
   static String getHostUrl(){
     return "http://$REST_URL";
